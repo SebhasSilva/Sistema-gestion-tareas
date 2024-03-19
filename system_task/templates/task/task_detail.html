@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Detalle de la tarea </title>
+    </head>
+    <body>
+        <h1> Detalles de la tarea </h1>
+        <p><strong>Titulo:</strong> {{ task.title }}</p>
+        <p><strong> Descripción:</strong> {{ task.description }}</p>
+        <p><strong> Fecha de creación: </strong> {{ task.created_at }}</p>
+        <p><strong> Estado: </strong> {{ task.get_status_display }}</p>
+        <a href="{% url 'task_update' task.id %}"> Editar </a>
+        <form action="{% url 'task_delete' task.id %}" method='POST'>
+            {% csrf_token %}
+            <input type="submit" value="Eliminar">
+        </form>
+        <a href="{% url 'task.list' %}"> Volver a la lista de tareas</a>
+    </body>
+</html>

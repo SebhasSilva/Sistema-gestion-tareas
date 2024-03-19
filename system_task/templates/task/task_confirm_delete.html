@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmar eliminación de tarea</title>
+</head>
+<body>
+    <h1>Confirmar eliminación</h1>
+    <p>¿Confirmas la eliminación de la tarea "{{ task.title }}"?</p>
+    <form action="{% url 'task_delete' task.id %}" method='POST'>
+        {% csrf_token %}
+        <input type="submit" value="Eliminar">
+    </form>
+    <a href="{% url 'task_detail' task.id %}">Cancelar</a>
+</body>
+</html>

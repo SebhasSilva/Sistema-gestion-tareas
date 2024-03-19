@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Lista de tareas </title>
+    </head>
+    <body>
+        <h1> Lista de tareas </h1>
+        <ul>
+            {%for task in task %}
+            <li> <a href="{% url "task_detail" task.id %}">{{ task.title }}</a> </li>
+            {% endfor %}%}
+        </ul>
+        <a href="{% url 'task_create' %}">Agregar nueva tarea </a>
+    </body>
+</html>
