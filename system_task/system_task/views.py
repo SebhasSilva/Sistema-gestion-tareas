@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task
 from .forms import TaskForm
 
+def home(request):
+    return render(request, 'home.html')
+
 def task_list(request):
     tasks = Task.objects.all()  # Corregido el llamado a "objects"
     return render(request, 'task_list.html', {'tasks': tasks})

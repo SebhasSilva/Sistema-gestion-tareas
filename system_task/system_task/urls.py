@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from system_task import views  # Importa las vistas de la aplicación
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('task/', include('Sistema-gestión-tareas.task_list.urls'))
+    path('system_task/', views.task_list, name='task_list'),
+    path('system_task/task/<int:pk>/', views.task_detail, name='task_detail'),
+    path('system_task/task/create/', views.task_create, name='task_create'),
+    path('system_task/task/<int:pk>/update/', views.task_update, name='task_update'),
+    path('system_task/task/<int:pk>/delete/', views.task_delete, name='task_delete'),
+    path('', views.home, name='home'),
 ]
