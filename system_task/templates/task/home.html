@@ -1,12 +1,23 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
     <head>
         <meta charset="UTF8">
-        <meta name="viewport" context="width=device-width, initial-scale=1.0">
-        <title> Inicio </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
     </head>
     <body>
         <h1>Bienvenido a mi aplicación</h1>
-        <p>Esta es la página de inicio.</p>
-</body>
+        <p>Acá podrás hacer seguimiento a todos tus propósitos</p>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="#">Asignado</a>
+                <a href="#">En curso</a>
+                <a href="#">Novedad</a>
+                <a href="#">Completado</a>
+            </div>
+        </div>
+    </body>
 </html>
